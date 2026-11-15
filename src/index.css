@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-royal-decorative: "Cinzel Decorative", "Cinzel", Georgia, serif;
+  --font-royal: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", serif;
+  --font-script: "Great Vibes", "Pinyon Script", "Cormorant Garamond", cursive;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --color-jasmine: #153024;
+  --color-jasmine-dark: #0E2219;
+  --color-gold-frame: #C49A45;
+  --color-gold-text: #8F6B29;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #FBF7EE;
+    color: #153024;
+    overflow-x: clip;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.font-royal-decorative {
+  font-family: var(--font-royal-decorative);
+}
+
+.font-royal-engraved {
+  font-family: var(--font-royal);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+.font-script-calligraphy {
+  font-family: var(--font-script);
+}
+
+.royal-gold-text {
+  background: linear-gradient(135deg, #8F6822 0%, #C89F49 48%, #7E591B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.watercolor-canvas {
+  background-color: #F3ECE0;
+  background-image:
+    radial-gradient(circle at 14% 12%, rgba(21, 48, 36, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 86% 24%, rgba(196, 154, 69, 0.14) 0%, transparent 44%),
+    radial-gradient(circle at 18% 72%, rgba(196, 154, 69, 0.11) 0%, transparent 40%),
+    radial-gradient(circle at 84% 86%, rgba(21, 48, 36, 0.09) 0%, transparent 45%);
+}
+
+/* 3D Envelope Unfolding Mechanics */
+.envelope-stage {
+  perspective: 1600px;
+}
+
+.envelope-flap {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.22, 0.85, 0.32, 1);
+}
+
+.envelope-flap-top {
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  transition-duration: 950ms;
+  transition-delay: 200ms;
+}
+
+.envelope-unfolding .envelope-flap-top {
+  transform: rotateX(165deg);
+  opacity: 0.15;
+}
+
+.envelope-flap-left {
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition-duration: 950ms;
+  transition-delay: 420ms;
+}
+
+.envelope-unfolding .envelope-flap-left {
+  transform: rotateY(-160deg);
+  opacity: 0.12;
+}
+
+.envelope-flap-right {
+  transform-origin: right center;
+  transform: rotateY(0deg);
+  transition-duration: 950ms;
+  transition-delay: 420ms;
+}
+
+.envelope-unfolding .envelope-flap-right {
+  transform: rotateY(160deg);
+  opacity: 0.12;
+}
+
+.envelope-flap-bottom {
+  transform-origin: bottom center;
+  transform: rotateX(0deg);
+  transition-duration: 950ms;
+  transition-delay: 680ms;
+}
+
+.envelope-unfolding .envelope-flap-bottom {
+  transform: rotateX(-160deg);
+  opacity: 0.1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Istiaque Mubin \u0026 Jahan Moon — Harmony",
+  "description": "Digital wedding invitation in the Harmony botanical editorial theme for Istiaque Mubin and Jahan Moon, featuring event schedule, photo gallery, interactive RSVP, gift registry, and guestbook wishes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
